@@ -5,59 +5,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
-    <title>Simple Login With Local Storage By ZaaDev</title>
+    <title>Simple Login With Local Storage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./css/sytle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="js/tailwind.js"></script>
 </head>
 
 <body>
-    <div class="flex justify-center content-center p-10">
-        <div class="max-w-fit py-4 px-8 bg-slate-100 shadow-xl rounded-lg my-5">
-            <div class="flex justify-center md:justify-end -mt-16">
-                <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="favicon.jpg">
-            </div>
-            <div>
-                <h2 class="text-gray-800 text-3xl font-semibold text-center mt-5 mb-3">Simple Login With Local Storage
-                </h2>
-                <p class="mt-2 text-gray-600 text-center">
-                    Simple login menggunakan Javascript.
-                    Memanfaatkan Localstorage untuk menyimpan seluruh data yang telah user input.
-                    Project ini cuma untuk refrensi temen temen ya, consider this just for learning.
-                    Dont forget to follow my github 😶. Happy coding :)</p>
-                <p class="mt-2 text-gray-600">Fitur :</p>
-                <p class="mt-2 text-gray-600 object-left">
-                    <li>Register</li>
-                    <li>Login</li>
-                    <li>Logout</li>
-                    <li>Delete Account</li>
-                    <li>Menyimpan Sesi Login (User tidak perlu input email/sandi lagi saat login)</li>
-                    <li>Auto redirect saat user ke halaman login/register</li>
-                    <li>Mengecek apakah akun sudah ada atau belum</li>
-                    <li>Menambahkan sesi</li>
-                    <li>Menghapus sesi</li>
-                    <li>Mengedit sesi</li>
-                </p>
-            </div>
-            <div class="flex justify-end mt-4">
-                <a href="register.html"
-                    class="text-xl font-medium bg-indigo-200 px-2 py-1 rounded-md text-indigo-500">Start</a>
+    <div class=" flex items-center justify-center h-64  
+    bg-gradient-to-r 
+    from-blue-400 
+    to-orange-500 
+    via-purple-500 min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        <div class=" flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl w-50 max-w-md ">
+            <div class="font-medium self-center text-xl sm:text-3xl text-gray-800">Qeydiyyat səhifəsi</div>
+            <div class="mt-10">
+                <div class="flex flex-col mb-5">
+                    <label for="email" class="mb-1 text-xs tracking-wide text-gray-600">Adınız</label>
+                    <div class="relative">
+                        <div
+                            class=" inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400 ">
+                            <i class="fas fa-user text-blue-500"></i>
+                        </div>
+                        <input id="name" type="name" name="name"
+                            class=" text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400 "
+                            placeholder="Adınızı daxil edin" required />
+                    </div>
+                </div>
+                <div class="flex flex-col mb-5">
+                    <label for="email" class="mb-1 text-xs tracking-wide text-gray-600">E-Mail:
+                    </label>
+                    <div class="relative">
+                        <div
+                            class=" inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400 ">
+                            <i class="fas fa-at text-blue-500"></i>
+                        </div>
+                        <input id="email" type="email" name="email" required
+                            class=" text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400 "
+                            placeholder="E-mailinizi daxil edin" />
+                    </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                    <label for="password" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Şifrə:</label>
+                    <div class="relative">
+                        <div
+                            class=" inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400 ">
+                            <span>
+                                <i class="fas fa-lock text-blue-500"></i>
+                            </span>
+                        </div>
+                        <input required id="password" type="password" name="password"
+                            class=" text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400 "
+                            placeholder="Şifrənizi daxil edin" />
+                    </div>
+                </div>
+                <div class="flex w-full">
+                    <button id="register-btn" type="submit"
+                        class=" flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in ">
+                        <span class="mr-2 uppercase">Qeydiyyat</span>
+                        <span>
+                            <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
+        <div class="flex justify-center items-center mt-6"><a href="#" target="_blank"
+                class=" inline-flex items-center text-white-700 font-medium text-xs text-center ">
+                <span class="ml-2">Hesabın var?
+                    <a href="login.html" type="submit" class="text-xs ml-3 text-yellow-500 font-semibold">Giriş
+                        səhifəsi</a>
+                </span>
+            </a>
+        </div>
     </div>
-    <div class="z-50 fixed bottom-0 text-center font-mono font-bold bg-gray-800 text-slate-300 py-0 text-sm w-full">©
-        2022
-        <a class="text-green-500" href="http://instagram.com/zaadevofc" target="_blank"
-            rel="noopener noreferrer">ZaaDev</a>
-        All Rights Reserved.<br>
-        <a class="text-slate-400" href="http://github.com/zaadevofc/simple-login-local" target="_blank" rel="noopener noreferrer">
-            <svg class="inline-block mb-0.5" fill="#ffff" width="14px" xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24">
-                <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-            Source Code
-        </a>
-    </div>
+    <script src="js/register.js"></script>
 </body>
 
 </html>
